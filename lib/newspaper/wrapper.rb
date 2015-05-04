@@ -26,6 +26,11 @@ class String
         break
       end
 
+      if elem.length > length
+        return_str.push elem
+        next
+      end
+
       if elem[-1] != ' ' and new_str[index+1][0] != ' '
         if elem[-4..-1].include? ' '    # Check the last 4 characters for a space
           spacey = (elem[-4..-1].rindex(' ')).to_i * -1      # If we found one, let's find it and split the word.

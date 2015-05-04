@@ -13,6 +13,11 @@ describe Newspaper::Wrapper do
   # end
 
   it 'hypenates the word' do
+    start_str = 'I think this will not hy phen ate'
+    expect(start_str.newspaper_wrap(4)).to eq(%w(i think this will not hy phen ate))
+  end
+
+  it 'Does not hyphenate the word' do
     start_str = 'yolomo joco'
     expect(start_str.newspaper_wrap(4)).to eq(%w(yolo- mo joco))
   end
